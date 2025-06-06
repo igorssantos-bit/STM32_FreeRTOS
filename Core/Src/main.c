@@ -56,6 +56,7 @@
 void SystemClock_Config(void);
 void MX_FREERTOS_Init(void);
 /* USER CODE BEGIN PFP */
+int __io_putchar(int ch);
 
 /* USER CODE END PFP */
 
@@ -173,6 +174,13 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+/**
+  * @brief  Retarget printf to UART4
+  * @retval int
+  */
+int __io_putchar(int ch){
+	return HAL_UART_Transmit(&huart4, (uint8_t *) &ch, 1, 300);
+}
 
 /* USER CODE END 4 */
 
