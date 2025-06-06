@@ -105,11 +105,12 @@ void MX_FREERTOS_Init(void) {
 void StartDefaultTask(void *argument)
 {
   /* USER CODE BEGIN defaultTask */
-  printf("teste\r\n");
+  printf("Default Init\r\n");
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+	printf("Default Run\r\n");
+    osDelay(1000);
   }
   /* USER CODE END defaultTask */
 }
