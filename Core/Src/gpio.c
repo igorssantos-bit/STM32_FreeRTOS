@@ -50,14 +50,13 @@ void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, NBIOT_RST_Pin|NBIOT_PWR_Pin|GNSS_PWR_Pin|FLASH_WP_Pin
-                          |USER_LED_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, NBIOT_RST_Pin|FLASH_RST_Pin, GPIO_PIN_SET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOA, NBIOT_PWR_Pin|GNSS_PWR_Pin|FLASH_WP_Pin|USER_LED_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, GNSS_RST_Pin|FLASH_CS_Pin, GPIO_PIN_SET);
-
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(FLASH_RST_GPIO_Port, FLASH_RST_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(USER_BT_GPIO_Port, USER_BT_Pin, GPIO_PIN_RESET);
